@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form id="theForm">
+        <textarea id="src" name="src" rows="20" cols="60">paste your yaml dependencies here</textarea>                
+</form>
+<br>
+<button onClick="get()">press me to convert</button>
+<br>
+<div id="answer">
+        your new dependencies will show up here
+</textarea>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+<script>
+function get() {
+    // $.post() 
+    console.log("im trying");
+    console.log("protocol is " + window.location.protocol);
+    $.ajax({
+        url: "https://pubcheck.herokuapp.com/p",
+        type: 'post',
+        data: $('form#theForm').serialize(),
+        success: function(data) {
+          var text = "";
+          deps = data.dependencies;
+          upgrades = data.upgrades;
+          var depKeys = Object.keys(deps);
+          for(i = 0; i < depKeys.length; i++) {
+            var key = depKeys[i], value = deps[key];
+            text += key + ": " + value + "<br>";
+          }
+          text +="upgrades:<br>"
+          for( i = 0; i < upgrades.length; i++) {
+            text += upgrades[i] + "<br>"
+          }
+            $("#answer").html(text);
+            console.log("data recieved");
+            console.log(data);
+        }
+    })
+    // $("#answer").text($("#src").text());
+}
+</script>
+</html>
+<!--
+
+dependencies:
+  flutter_typeahead: ^0.5.1
+  mashov_api: ^0.0.13
+  shared_preferences: ^0.4.3
+  localstorage: ^1.0.1
+  connectivity: ^0.4.0+1
+  fab_menu: ^0.0.2
+  rxdart: 0.21.0
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+-->

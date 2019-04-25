@@ -1,0 +1,26 @@
+{
+  "name": "pubcheck",
+  "version": "1.0.0",
+  "description": "no more searching each package on pub for versions",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"hahaha no tests are needed this is great\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanir-edri/pubcheck.git"
+  },
+  "keywords": [
+    "dart",
+    "pub",
+    "flutter"
+  ],
+  "author": "Yanir Edri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yanir-edri/pubcheck/issues"
+  },
+  "homepage": "https://github.com/yanir-edri/pubcheck#readme"
+}

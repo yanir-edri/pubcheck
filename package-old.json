@@ -1,0 +1,23 @@
+{
+  "name": "pubcheck",
+  "description": "no more searching each package on pub for versions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jquery": "^3.4.0",
+    "jsdom": "^15.0.0",
+    "yaml": "^1.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1"
+  },
+  "private": true
+}
